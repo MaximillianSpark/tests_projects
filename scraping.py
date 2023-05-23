@@ -6,23 +6,23 @@ import json
 from datetime import datetime
 
 # Создаем папку data для хранения json файлов
-# directory = "data"
-# new_dir = "./"
-# path = os.path.join(new_dir, directory)
+directory = "data"
+new_dir = "./"
+path = os.path.join(new_dir, directory)
 
-# if os.path.exists(path):
-#     print("Папка уже существует")
-# else:
-#     os.mkdir(path)
+if os.path.exists(path):
+    print("Папка уже существует")
+else:
+    os.mkdir(path)
     
-# directory = "data/pagenation_products"
-# new_dir = "./"
-# path = os.path.join(new_dir, directory)
+directory = "data/pagenation_products"
+new_dir = "./"
+path = os.path.join(new_dir, directory)
 
-# if os.path.exists(path):
-#     print("Папка уже существует")
-# else:
-#     os.mkdir(path)
+if os.path.exists(path):
+    print("Папка уже существует")
+else:
+    os.mkdir(path)
 
 date = datetime.now()
 print(date)
@@ -117,7 +117,7 @@ with open("data/catalogs_dict.json", encoding="utf-8") as file:
 
 first_pagen_products = {}
 final_parse = {}
-# Циклом соберем товары из 3го каталога
+# Циклом соберем товары из каталога
 for key, value in con.items():
     src = requests.get(url=value, headers=headers)
     time.sleep(2)
@@ -140,15 +140,4 @@ with open(f"data/pagenation_products/products.json", "w", encoding="utf-8") as f
     
 date1 = datetime.now()
 print(date1)
-        # final_parse.setdefault(product_name.rsplit(' [')[0], {"Наименование": product_name, "Ссылка": product_link, "Цена": product_price})
-        # print(f"---------->{first_pagen_products}<-------------")
-    # final_parse.setdefault(key, final_final)
-                
         
-# with open("data/pagenation_products/test.json", "w", encoding="utf-8") as file:
-#     json.dump(final, file, indent=4, ensure_ascii=False)
-        
-# time.sleep(5)        
-
-# with open("data/pagenation_products/first_pagen_products.json", "w", encoding="utf-8") as file:
-#     json.dump(first_pagen_products, file, indent=4, ensure_ascii=False)
