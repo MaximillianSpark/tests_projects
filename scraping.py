@@ -56,7 +56,7 @@ second_catalogs_dict = {}
 for key, value in first_catalogs_dict.items():
     src = requests.get(url=value, headers=headers)
     second_scrap = src.text
-    time.sleep(2)
+    # time.sleep(2)
     soup = BeautifulSoup(second_scrap, "lxml")
     second_catalog = soup.find_all(class_="subcategory__item")
     
@@ -75,7 +75,7 @@ with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
 third_catalogs_dict = {}
 for key, value in second_catalogs_dict.items():
     src = requests.get(url=value, headers=headers)
-    time.sleep(2)
+    # time.sleep(2)
     third_scrap = src.text
     soup = BeautifulSoup(third_scrap, "lxml")
     third_catalog = soup.find_all(class_="subcategory__item")
@@ -94,7 +94,7 @@ with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
 fourth_catalogs_dict = {}
 for key, value in third_catalogs_dict.items():
     src = requests.get(url=value, headers=headers)
-    time.sleep(2)
+    # time.sleep(2)
     fourth_scrap = src.text
     soup = BeautifulSoup(fourth_scrap, "lxml")
     fourth_catalog = soup.find_all(class_="subcategory__item")
@@ -120,7 +120,7 @@ final_parse = {}
 # Циклом соберем товары из каталога
 for key, value in con.items():
     src = requests.get(url=value, headers=headers)
-    time.sleep(2)
+    # time.sleep(2)
     pagen_first = src.text
     soup = BeautifulSoup(pagen_first, "lxml")
     pagen_catalog = soup.find_all("div", class_="catalog-product")
