@@ -48,8 +48,8 @@ for item in first_catalogs:
     first_catalogs_dict.setdefault(ftext_item, flink_item)
     
     
-with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
-    json.dump(first_catalogs_dict, file, indent=4, ensure_ascii=False)
+# with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
+#     json.dump(first_catalogs_dict, file, indent=4, ensure_ascii=False)
     
 
 second_catalogs_dict = {}
@@ -66,10 +66,11 @@ for key, value in first_catalogs_dict.items():
         s_link_item = "https://www.dns-shop.kz" + item.get("href")
         second_catalogs_dict.setdefault(s_text_item, s_link_item)
     
+first_catalogs_dict.update(second_catalogs_dict)
+print("Second Scrap is Done")
 
-
-with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
-    json.dump(second_catalogs_dict, file, indent=4, ensure_ascii=False)
+# with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
+#     json.dump(second_catalogs_dict, file, indent=4, ensure_ascii=False)
     
     
 third_catalogs_dict = {}
@@ -87,8 +88,11 @@ for key, value in second_catalogs_dict.items():
         third_catalogs_dict.setdefault(t_text_item, t_link_item)
 
 
-with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
-    json.dump(third_catalogs_dict, file, indent=4, ensure_ascii=False)
+first_catalogs_dict.update(third_catalogs_dict)
+print("Third Scrap is Done")
+
+# with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
+#     json.dump(third_catalogs_dict, file, indent=4, ensure_ascii=False)
     
 
 fourth_catalogs_dict = {}
@@ -106,8 +110,11 @@ for key, value in third_catalogs_dict.items():
         fourth_catalogs_dict.setdefault(f_text_item, f_link_item)
 
 
+first_catalogs_dict.update(fourth_catalogs_dict)
+print("Fourth scrap is Done")
+
 with open("data/catalogs_dict.json", "a", encoding="utf-8") as file:
-    json.dump(fourth_catalogs_dict, file, indent=4, ensure_ascii=False)
+    json.dump(first_catalogs_dict, file, indent=4, ensure_ascii=False)
     
     
 with open("data/catalogs_dict.json", encoding="utf-8") as file:
